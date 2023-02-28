@@ -16,8 +16,7 @@ jobs:
       - name: install dependencies
         run: 
           npm install
-          npm install prettier
-          npm install eslint
+          
 
 
       - name: Linter chal
