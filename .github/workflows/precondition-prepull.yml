@@ -21,4 +21,4 @@ jobs:
 
       - name: Linter chal
         run:
-          npm run lint -- --fix
+          npx eslint -- --fix
