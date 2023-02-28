@@ -1,23 +1,21 @@
+import http from "http";
+import express from "express";
+import bodyparser from "body-parser";
+import adminRouter from "./Routes/admin.js";
+import shopRouter from "./Routes/shop.js";
+const app = express();
 
-import http from 'http';
-import express from 'express';
-import bodyparser from 'body-parser'
-import adminRouter from './Routes/admin.js';
-import shopRouter from './Routes/shop.js';
-const app =express()
+app.use(bodyparser.urlencoded({ extended: false }));
 
-app.use(bodyparser.urlencoded({extended: false}))
+app.use("/admin", adminRouter);
+app.use(shopRouter);
 
-app.use('/admin',adminRouter)
-app.use(shopRouter)
+app.use((req, res, next) => {
+  res.status(404).send("<h1>404 Page not found</h1>");
+});
 
-app.use((req, res, next)=>{
-    res.status(404).send('<h1>404 Page not found</h1>')
-})
-
-app.listen(3000)
+app.listen(3000);
 // const server = http.createServer(app)
-    
 
 // server.listen(3000);
 // import chalk from 'chalk/
@@ -41,14 +39,13 @@ app.listen(3000)
 //     .catch(error)  {
 //         console.log(error)
 //     }
-    // const command = process.argv[2]
+// const command = process.argv[2]
 
-    // console.log(process.argv)
+// console.log(process.argv)
 
-    // if(command === 'add' ) {
-    //     console.log('Adding Note')
-    // }
-    // else if(command === 'remove'){
-    //     console.log('removing note')
-    // }
-    
+// if(command === 'add' ) {
+//     console.log('Adding Note')
+// }
+// else if(command === 'remove'){
+//     console.log('removing note')
+// }

@@ -1,11 +1,11 @@
-import path from 'path'
+import path from "path";
 
-import express from 'express';
+import express from "express";
 
-const shopRouter =  express.Router()
+const shopRouter = express.Router();
 
-shopRouter.get('/', (req, res, next)=>{
-    res.sendFile(path.join(__dirname,'../', 'views', 'shop.html'))
-})
+shopRouter.get("/", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "../", "views", "shop.html"));
+});
 
-export default shopRouter
+export default shopRouter;
