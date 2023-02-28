@@ -17,6 +17,6 @@ jobs:
         run: npm install
 
       - name: Prettier run
-        run: npx prettier --write
-        with:
-          prettier_options: --write **/*.{js, md}
+        run:
+          npm run lint 
+          npm run fix
