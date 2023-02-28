@@ -12,11 +12,11 @@ on:
 
       steps:
        -name: Checkout
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.main }}
+       uses: actions/checkout@v3
+       with:
+        ref: ${{ github.main }}
 
        -name: prettier
-        uses: creyD/prettier_actions@v4.2
-        with:
-          prettier_options: --write **/*.{js, md}
+       uses: creyD/prettier_actions@v4.2
+       with:
+        prettier_options: --write **/*.{js, md}
