@@ -19,6 +19,6 @@ jobs:
           npm install prettier
 
 
-      - name: Prettier run
+      - name: Linter chal
         run:
           npm run lint -- --fix
