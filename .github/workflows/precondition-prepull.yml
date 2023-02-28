@@ -3,20 +3,20 @@ name: Continuous Integration
 on:
   pull_request:
   push:
-    branches: 
+    branches:
       - master
 
-jobs: 
+jobs:
   prettier:
     runs-on: ubuntu-latest
     steps:
-      -name: Checkout
-       uses: actions/checkout@v3
-      
-      -name: install dependencies
-       run : npm install
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      -name: Prettier run
-       run: npx prettier --write
-       with:
-        prettier_options: --write **/*.{js, md}
+      - name: install dependencies
+        run: npm install
+
+      - name: Prettier run
+        run: npx prettier --write
+        with:
+          prettier_options: --write **/*.{js, md}
